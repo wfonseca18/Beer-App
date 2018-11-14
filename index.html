@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,33 +10,92 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
-        <script src="BeerDB.js"></script>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script src="BeerDB.js"></script>
     <title>Document</title>
-</head>
+
+    <head>
+        <!--Load the AJAX API-->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+
+
+            // Load the Visualization API and the corechart package.
+            google.charts.load('current', { 'packages': ['corechart'] });
+
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.charts.setOnLoadCallback(drawChart);
+
+            // Callback that creates and populates a data table,
+            // instantiates the pie chart, passes in the data and
+            // draws it.
+            function drawChart() {
+
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Beer');
+                data.addColumn('number', 'Liked');
+                data.addRows([
+                    ['Bud Light ', 5],
+                    ['Coors Light', 4],
+                    ['Budwieser', 3],
+                    ['Miller Light', 2],
+                    ['Corona Extra', 1]
+                ]);
+
+                // Set chart options
+                var options = {
+                    'title': 'Most Liked Beers',
+                    'width': 400,
+                    'height': 300
+                };
+
+                // Instantiate and draw our chart, passing in some options.
+                var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                chart.draw(data, options);
+            }
+        </script>
+    </head>
 
 <body>
     <div class="jumbotron m-3">
         <h1 class="text-center">Favorite Beers<span class="pl-2"><i class="fas fa-beer"></i></span></h1>
     </div>
-
-    <form class="beerForm m-3">
-        <div class="form-group">
-            <label for="enterBeer">Enter in your favorite beer</label>
-            <input type="beer" class="form-control" id="favoriteBeer" placeholder="Favorite Beer">
-        </div>
+    <div class="row">
         <div>
-            <button type="search" class="btn btn-primary" id="search"><i class="fas fa-search"></i><span 
-                class="pl-2">Search</span></button>
+            <!--Div that will hold the pie chart-->
+            <div id="chart_div"></div>
         </div>
-    </form>
-
-    <div class="list of beers">
-        <ol>
-
-        </ol>
-
+        <div class=" col-2 p-3 m-3">
+            <div class="container">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Different Beers
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Bud Light</a>
+                        <a class="dropdown-item" href="#">Corona Extra</a>
+                        <a class="dropdown-item" href="#">Coors Light</a>
+                        <a class="dropdown-item" href="#">Miller Light</a>
+                        <a class="dropdown-item" href="#">Budwieser</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
-
+    </div>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
