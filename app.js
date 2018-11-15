@@ -108,18 +108,12 @@ $.ajax({
   console.log(response3);
 })
 
-  // }
-
 // $('#addBeer').on('click', beerInfo);
 
 
 
 
 
-  // });
-//
-
-// 
 
 
 // BeerDB
@@ -154,9 +148,6 @@ console.log('BeerDB Here!!!!');
 //     console.log(xhr.responseText);
 //     console.log(textStatus);
 //   });
-
-
-
 
 
     // $.ajax({
@@ -199,12 +190,6 @@ console.log('BeerDB Here!!!!');
     //       console.log('Fail');
     //     }
     //   });
-
-
-
-
-
-
 
 
 
