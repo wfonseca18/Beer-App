@@ -1,5 +1,41 @@
 //Store list of Beer identified as favorites and track "Plaque data"for rendering on button face and incrementing score
-const beerList = [{
+const beerList = [
+  {
+    name: 'Bud Light',
+    type: 'lager',
+    brewery: 'Anheuser-Busch',  
+    abv: '3.2%',
+    score: '1'
+  },
+  {
+    name: 'Corona Extra',
+    type: 'lager',
+    brewery: 'Cerveceria Modelo',  
+    abv: '4.6%',
+    score: '1'
+  },
+  {
+    name: 'Coors Light',
+    type: 'lager',
+    brewery: 'Coors Brewing Company',  
+    abv: '4.2%',
+    score: '1'
+  },
+  {
+    name: 'Miller Light',
+    type: 'lager',
+    brewery: 'Miller Brewing Company',  
+    abv: '4.2%',
+    score: '1'
+  },
+  {
+    name: 'Budwieser',
+    type: 'lager',
+    brewery: 'Anheuser-Busch',  
+    abv: '4.4%',
+    score: '1'
+  },
+  {
     name: 'Yuengling',
     type: 'lager',
     brewery: 'Yeungling Brothers',  
