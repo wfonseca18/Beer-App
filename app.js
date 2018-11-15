@@ -114,7 +114,7 @@ const beerInfo = function(event) {
 
 
   });
-
+//
 
 
 
