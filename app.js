@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
 
-  console.log(beerList);
   //dynamic array of contents in favorite beer list array -- also on index.js
   // DYNAMICALLY CREATE BUTTONS that are the beer name plate and match the favorite product products 
   //-button press to increment favorite score in array
@@ -15,8 +14,10 @@ $(document).ready(function () {
       //Create a variable named "beerBtn" equal to $("<button>");
       const beerBtn = $('<button>');
 
+
+
       //Then give each "beerBtn" the following classes: "beer-button" "beer" "beer-button-color" "brewery, ABV, and score".
-      beerBtn.addClass('beer-button beer beer-button-color brewery abv score');
+      beerBtn.addClass('beer-button beer-name');
 
       //Then give each "beerBtn" an attribute called "beer-name", and "beer-type" with a value eqaual to "beerList[i] array"
       beerBtn.attr('beer-name', beerList[i].name);
@@ -26,6 +27,12 @@ $(document).ready(function () {
       beerBtn.text(beerList[i].name);
       //Append each "beerBtn" to the "#favorites" div ( to be provided) and these buttons increment favorites score in array.
       $('#favorites').append(beerBtn);
+
+      $('.beer-button').on('click', function () {
+        // 
+        console.log($(this));
+
+      });
 
     }
   }
@@ -65,7 +72,21 @@ $(document).ready(function () {
   //the two sections below -- add button, and beerInfo need tobe compressed into single process and function -- have duplicate as both built as test samples
   //*********************************************************888  to be built  */
 
+  function myFunction() {
+    // $('#submit').on('click', beerInfo);
 
+    const beerName = $('#beerInput').val().trim(); // grab beer from input field and assign to variable beerName
+    const clientID = '57E8159A820EF24D970F8FF3DA35FA786E6CD22B'
+    const clientSecret = '5DA2FE5752A0B5BF39DC21A323EF78AC587B57BD'
+    //const testURL = `https://api.untappd.com/v4/search/beer?q=${beerName}&sort=name&client_id=${clientID}&client_secret=${clientSecret}`
+    const testURL = `https://api.untappd.com/v4/beer/info?BID=3942&sort=name&client_id=${clientID}&client_secret=${clientSecret}`
+    $.ajax({
+      url: testURL,
+      method: 'GET'
+    }).then(function (response3) {
+      console.log(response3);
+    })
+  }
 
   // This function handles events where add a beer button is clicked (submit) -- this portion is only to generate the new button and add it to available list
 
@@ -87,26 +108,13 @@ $(document).ready(function () {
   beerList.push(beerInput);////// push additional data form API calls to beerList array*************************to be built
 
   // Deletes the contents of the input field
-  $('#beer-input').val('');
+  $('#beerInput').val('');
 
   // calling renders which handles the processing of our beerList array and regenerates beer buttons
   render();
 });
 
 
-// $('#submit').on('click', beerInfo);
-
-const beerName = $('#beerInput').val().trim(); // grab beer from input field and assign to variable beerName
-const clientID = '57E8159A820EF24D970F8FF3DA35FA786E6CD22B'
-const clientSecret = '5DA2FE5752A0B5BF39DC21A323EF78AC587B57BD'
-//const testURL = `https://api.untappd.com/v4/search/beer?q=${beerName}&sort=name&client_id=${clientID}&client_secret=${clientSecret}`
-const testURL = `https://api.untappd.com/v4/beer/info?BID=3942&sort=name&client_id=${clientID}&client_secret=${clientSecret}`
-$.ajax({
-  url: testURL,
-  method: 'GET'
-}).then(function (response3) {
-  console.log(response3);
-})
 
 // $('#addBeer').on('click', beerInfo);
 
@@ -125,11 +133,11 @@ $.ajax({
 // Search Button: #search
 
 
-var beerDB = [];
+// var beerDB = [];
 
-$.get('https://sandbox-api.brewerydb.com/v2/beers?key=e653cee80fd3616231cceff422090d22', function (response) {
-  console.log(response);
-});
+// $.get('https://sandbox-api.brewerydb.com/v2/beers?key=e653cee80fd3616231cceff422090d22', function (response) {
+//   console.log(response);
+// });
 
 // $.ajax({
 //   type: "GET",
