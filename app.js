@@ -162,7 +162,6 @@ $(document).ready(function () {
   $('#addBeer').on('click', beerInfo);
 
 
-<<<<<<< HEAD
 
 
 
@@ -258,6 +257,3 @@ console.log('BeerDB Here!!!!');
 
 
 
-=======
-  });
->>>>>>> 43fa90c5143e461c2687fca148a7f6729b60672f
