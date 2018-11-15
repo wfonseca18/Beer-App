@@ -11,7 +11,7 @@ console.log(beerList);
     $('#favorites').empty();
     // Create a for-loop to iterate through the letters array.
     for( let i = 0; i < beerList.length; i++ ) {
-console.log('one');
+
       //Create a variable named "beerBtn" equal to $("<button>");
       const beerBtn = $('<button>');
 
@@ -24,36 +24,36 @@ console.log('one');
 
       //Then give each "beerBtn" a text equal to "beertList[i]" - this is what is listed on the button face.
       beerBtn.text(beerList[i].name);
-console.log('AAAA');
+
       //Append each "beerBtn" to the "#favorites" div ( to be provided) and these buttons increment favorites score in array.
       $('#favorites').append(beerBtn);
      
     }
   }
-  console.log('call render next');
+ 
   render();
 
-  //  ATTACH ON-CLICK EVENTS TO "favorites" BUTTONS
+  // //  ATTACH ON-CLICK EVENTS TO "favorites" BUTTONS
   
-  const incrementScore = function() {
+  // const incrementScore = function() {
     
-    // Inside the on-click event...  to increment the "score" for that particular beer
+  //   // Inside the on-click event...  to increment the "score" for that particular beer
    
-    let beerName = '';
+  //   let beerName = '';
     
-    // 10. Then chain the following code onto the "task" variable: .text($(this).attr("data-beer"))
+  //   // 10. Then chain the following code onto the "task" variable: .text($(this).attr("data-beer"))
     
-    beerName = $(this).attr("beer-name");
+  //   beerName = $(this).attr("beer-name");
 
-  if (beerList.includes(beerName)) {
-    // increment beer name in beerList array to (score+1)--- to be built**********************************************to be built
+  // if (beerList.includes(beerName)) {
+  //   // increment beer name in beerList array to (score+1)--- to be built**********************************************to be built
 
-      }
+  //     }
 
-  }
+  // }
 
-  // Create an "on-click" event attached to the ".beer-button" class to push incremental score up by one when pressed.
-  $('#inventory').on('click', '.beer-button', incrementScore);
+  // // Create an "on-click" event attached to the ".beer-button" class to push incremental score up by one when pressed.
+  // $('#inventory').on('click', '.beer-button', incrementScore);
   
  
 
@@ -75,14 +75,14 @@ const addButton = function(event) {
   event.preventDefault();
 
   // This line will grab the text from the input box and trim off any white space
-  const beerInput = $('#beer-input').val().trim();
+  const beerInput = $('#beerInput').val().trim();
 
 
   // The beer from the textbox is then added to our array
   beerList.push(beerInput);////// push additional data form API calls to beerList array*************************to be built
   
   // Deletes the contents of the input field
-  $('#beer-input').val('');
+  $('#beerInput').val('');
 
   // calling renders which handles the processing of our beerList array and regenerates beer buttons
   render();
@@ -107,98 +107,10 @@ const beerInfo = function(event) {
 
     }
 
-    $('#addBeer').on('click', beerInfo);
+    $('#submit').on('click', beerInfo);
 
 
 
 
 
   });
-
-
-
-
-
-// BeerDB
-// BreweryDB
-// Base Endpoint: https://sandbox-api.brewerydb.com/v2/
-// API Key: e653cee80fd3616231cceff422090d22
-// Input field: #favoriteBeer
-// Search Button: #search
-
-
-var beerDB = [];
-
-// $.get('https://sandbox-api.brewerydb.com/v2/beers?key=e653cee80fd3616231cceff422090d22', function (response) {
-//     console.log(response);
-// });
-
-$.ajax({
-    type: "GET",
-    url: 'https://sandbox-api.brewerydb.com/v2/beers?key=e653cee80fd3616231cceff422090d22',
-    // xhrFields: {
-    //   withCredentials: false
-    // },
-    crossDomain: true
-})
-    .done(function (response) {
-        console.log(response);
-    })
-    .fail(function (xhr, textStatus, errorThrown) {
-        console.log(xhr.responseText);
-        console.log(textStatus);
-    });
-
-
-
-
-
-    // $.ajax({
-    //     type: 'GET',
-    //     url: 'http://html5rocks-cors.s3-website-us-east-1.amazonaws.com/index.html',
-      
-    //     // The 'contentType' property sets the 'Content-Type' header.
-    //     // The JQuery default for this property is
-    //     // 'application/x-www-form-urlencoded; charset=UTF-8', which does not trigger
-    //     // a preflight. If you set this value to anything other than
-    //     // application/x-www-form-urlencoded, multipart/form-data, or text/plain,
-    //     // you will trigger a preflight request.
-    //     contentType: 'text/plain',
-      
-    //     xhrFields: {
-    //       // The 'xhrFields' property sets additional fields on the XMLHttpRequest.
-    //       // This can be used to set the 'withCredentials' property.
-    //       // Set the value to 'true' if you'd like to pass cookies to the server.
-    //       // If this is enabled, your server must respond with the header
-    //       // 'Access-Control-Allow-Credentials: true'.
-    //       withCredentials: false
-    //     },
-      
-    //     headers: {
-    //       // Set any custom headers here.
-    //       // If you set any non-simple headers, your server must include these
-    //       // headers in the 'Access-Control-Allow-Headers' response header.
-    //     },
-      
-    //     success: function() {
-    //       // Here's where you handle a successful response.
-    //       console.log('Success');
-    //     },
-      
-    //     error: function() {
-    //       // Here's where you handle an error response.
-    //       // Note that if the error was due to a CORS issue,
-    //       // this function will still fire, but there won't be any additional
-    //       // information about the error.
-    //       console.log('Fail');
-    //     }
-    //   });
-
-
-
-
-
-
-
-
-
