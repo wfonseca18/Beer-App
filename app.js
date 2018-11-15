@@ -10,7 +10,7 @@ $(document).ready(function () {
     //clear beerButtons ID=favorites to prevent duplicates and then reload buttons after each new addition to beerList array
     $('#favorites').empty();
     // Create a for-loop to iterate through the letters array.
-    for( let i = 0; i < beerList.length; i++ ) {
+    for (let i = 0; i < beerList.length; i++) {
 
       //Create a variable named "beerBtn" equal to $("<button>");
       const beerBtn = $('<button>');
@@ -29,19 +29,19 @@ $(document).ready(function () {
 
     }
   }
- 
+
   render();
 
   // //  ATTACH ON-CLICK EVENTS TO "favorites" BUTTONS
-  
+
   // const incrementScore = function() {
-    
+
   //   // Inside the on-click event...  to increment the "score" for that particular beer
-   
+
   //   let beerName = '';
-    
+
   //   // 10. Then chain the following code onto the "task" variable: .text($(this).attr("data-beer"))
-    
+
   //   beerName = $(this).attr("beer-name");
 
   // if (beerList.includes(beerName)) {
@@ -53,8 +53,8 @@ $(document).ready(function () {
 
   // // Create an "on-click" event attached to the ".beer-button" class to push incremental score up by one when pressed.
   // $('#inventory').on('click', '.beer-button', incrementScore);
-  
- 
+
+
 
 
 
@@ -72,51 +72,51 @@ $(document).ready(function () {
   // This line will grab the text from the input box and trim off any white space
   const beerInput = $('#beerInput').val().trim();
 
-    // event.preventDefault() prevents the form from trying to submit itself.
-    // Using a form so that the user can hit enter instead of clicking the button if they want
-    event.preventDefault();
+  // event.preventDefault() prevents the form from trying to submit itself.
+  // Using a form so that the user can hit enter instead of clicking the button if they want
+  // event.preventDefault();
 
   // The beer from the textbox is then added to our array
   beerList.push(beerInput);////// push additional data form API calls to beerList array*************************to be built
-  
+
   // Deletes the contents of the input field
   $('#beerInput').val('');
 
 
-    // The beer from the textbox is then added to our array
-    beerList.push(beerInput);////// push additional data form API calls to beerList array*************************to be built
+  // The beer from the textbox is then added to our array
+  beerList.push(beerInput);////// push additional data form API calls to beerList array*************************to be built
 
-    // Deletes the contents of the input field
-    $('#beer-input').val('');
+  // Deletes the contents of the input field
+  $('#beer-input').val('');
 
-    // calling renders which handles the processing of our beerList array and regenerates beer buttons
-    render();
-  }
-
-
-    $('#submit').on('click', beerInfo);
-
-    const beerName = $('#beerInput').val().trim(); // grab beer from input field and assign to variable beerName
-    const clientID = '57E8159A820EF24D970F8FF3DA35FA786E6CD22B'
-    const clientSecret = '5DA2FE5752A0B5BF39DC21A323EF78AC587B57BD'
-    //const testURL = `https://api.untappd.com/v4/search/beer?q=${beerName}&sort=name&client_id=${clientID}&client_secret=${clientSecret}`
-    const testURL = `https://api.untappd.com/v4/beer/info?BID=3942&sort=name&client_id=${clientID}&client_secret=${clientSecret}`
-    $.ajax({
-      url: testURL,
-      method: 'GET'
-    }).then(function (response3) {
-      console.log(response3);
-    })
-
-  }
-
-  $('#addBeer').on('click', beerInfo);
+  // calling renders which handles the processing of our beerList array and regenerates beer buttons
+  render();
+});
 
 
+// $('#submit').on('click', beerInfo);
+
+const beerName = $('#beerInput').val().trim(); // grab beer from input field and assign to variable beerName
+const clientID = '57E8159A820EF24D970F8FF3DA35FA786E6CD22B'
+const clientSecret = '5DA2FE5752A0B5BF39DC21A323EF78AC587B57BD'
+//const testURL = `https://api.untappd.com/v4/search/beer?q=${beerName}&sort=name&client_id=${clientID}&client_secret=${clientSecret}`
+const testURL = `https://api.untappd.com/v4/beer/info?BID=3942&sort=name&client_id=${clientID}&client_secret=${clientSecret}`
+$.ajax({
+  url: testURL,
+  method: 'GET'
+}).then(function (response3) {
+  console.log(response3);
+})
+
+  // }
+
+// $('#addBeer').on('click', beerInfo);
 
 
 
-  });
+
+
+  // });
 //
 
 // 
@@ -134,7 +134,7 @@ $(document).ready(function () {
 var beerDB = [];
 
 $.get('https://sandbox-api.brewerydb.com/v2/beers?key=e653cee80fd3616231cceff422090d22', function (response) {
-    console.log(response);
+  console.log(response);
 });
 
 console.log('BeerDB Here!!!!');
