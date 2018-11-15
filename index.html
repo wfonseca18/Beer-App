@@ -11,16 +11,11 @@
         crossorigin="anonymous">
     <link rel="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous">
-    <!--Load the AJAX API-->
+    <!--Load the AJAX CHART API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-    <script src="BeerDB.js"></script>
     <title>Document</title>
-    <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-
-
         // Load the Visualization API and the corechart package.
         google.charts.load('current', { 'packages': ['corechart'] });
 
@@ -76,7 +71,7 @@
                         <label for="exampleInputPassword1">Beers</label>
                         <input type="text" class="form-control" id="beerInput" placeholder="Beer">
                     </div>
-                    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                    <button type="button" class="btn btn-primary" id="submit">Submit</button>
                 </form>
             </div>
 
@@ -97,22 +92,22 @@
         <label for="beerForm">Add a Beer</label>
         <input type="text" id="beerInput">
         <br>
-  
+
         <!-- Button triggers new beer to be investigated and added -->
         <input id="addBeer" type="submit" value="Add a Beer:   ">
         <br>
-      </form>
+    </form>
 
-      <div id="favorites"></div>
+    <div id="favorites"></div>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <script src="./app.js"></script>
     <script src="./index.js"></script>
 </body>
+
 </html>
