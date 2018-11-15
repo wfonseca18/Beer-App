@@ -93,7 +93,7 @@ $(document).ready(function () {
   render();
 });
 
-//
+
 // $('#submit').on('click', beerInfo);
 
 const beerName = $('#beerInput').val().trim(); // grab beer from input field and assign to variable beerName
