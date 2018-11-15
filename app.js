@@ -131,8 +131,6 @@ $.get('https://sandbox-api.brewerydb.com/v2/beers?key=e653cee80fd3616231cceff422
   console.log(response);
 });
 
-console.log('BeerDB Here!!!!');
-
 // $.ajax({
 //   type: "GET",
 //   url: 'https://sandbox-api.brewerydb.com/v2/beers?key=e653cee80fd3616231cceff422090d22',
