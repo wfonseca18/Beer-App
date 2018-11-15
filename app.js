@@ -113,10 +113,10 @@ $(document).ready(function () {
 
 
 
-});
+  });
+//
 
-
-
+// 
 
 
 // BeerDB
