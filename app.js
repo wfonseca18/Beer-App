@@ -21,13 +21,12 @@ $(document).ready(function () {
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Beer');
     data.addColumn('number', 'Liked');
-    data.addRows([
-      ['Bud Light ', 5],
-      ['Coors Light', 4],
-      ['Budwieser', 3],
-      ['Miller Light', 2],
-      ['Corona Extra', 1]
-    ]);
+
+    for (let i = 0; i < 5; i++) {
+      data.addRows([
+        [beerList[i].name + ' ', beerList[i].score]
+      ]);
+    }
 
     // Set chart options
     var options = {
