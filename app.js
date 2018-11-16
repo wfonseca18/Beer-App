@@ -20,7 +20,7 @@ $(document).ready(function () {
         html += '</div>';
         html += '<div class="card-body">';
         html += `<p>Type: ${beerList[i].type}<br>`;
-        html += `ABV: ${beerList[i].abv}<br>`;
+        html += `ABV: ${beerList[i].abv}%<br>`;
         html += `Brewery: ${beerList[i].brewery}<br>`;
         html += '</p>';
         html += '</div>';
