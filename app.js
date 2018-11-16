@@ -11,26 +11,22 @@ $(document).ready(function () {
     // Create a for-loop to iterate through the letters array.
     for (let i = 0; i < beerList.length; i++) {
 
-      //Create a variable named "beerBtn" equal to $("<button>");
-      const beerBtn = $('<button>');
+      $('#favorites').append(`<button id="button-${i}" class="beer-button beer-name">${beerList[i].name}</button>`)
+      
+      $(`#button-${i}`).on('click', function () {
+        let html = '<div class="card">';
+        html += '<div class="card-header">';
+        html += `<h3>${beerList[i].name}</h3>`;
+        html += '</div>';
+        html += '<div class="card-body">';
+        html += `<p>Type: ${beerList[i].type}<br>`;
+        html += `ABV: ${beerList[i].abv}<br>`;
+        html += `Brewery: ${beerList[i].brewery}<br>`;
+        html += '</p>';
+        html += '</div>';
+        html += '</div>'
 
-
-
-      //Then give each "beerBtn" the following classes: "beer-button" "beer" "beer-button-color" "brewery, ABV, and score".
-      beerBtn.addClass('beer-button beer-name');
-
-      //Then give each "beerBtn" an attribute called "beer-name", and "beer-type" with a value eqaual to "beerList[i] array"
-      beerBtn.attr('beer-name', beerList[i].name);
-      beerBtn.attr('beer-type', beerList[i].type);
-
-      //Then give each "beerBtn" a text equal to "beertList[i]" - this is what is listed on the button face.
-      beerBtn.text(beerList[i].name);
-      //Append each "beerBtn" to the "#favorites" div ( to be provided) and these buttons increment favorites score in array.
-      $('#favorites').append(beerBtn);
-
-      $('.beer-button').on('click', function () {
-        // 
-        console.log($(this));
+        $('#beer-display').html(html);
 
       });
 
