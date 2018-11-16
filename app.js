@@ -82,8 +82,15 @@ $(document).ready(function () {
       method: 'GET'
     }).then(function (response3) {
       console.log(response3);
-      const one = response3.response.beers.items[0].beer.beer_abv;
-      console.log(one);
+      const beerABV = response3.response.beers.items[0].beer.beer_abv;
+      console.log(beerABV);
+      const breweryName = response3.response.beers.items[0].brewery.brewery_name;
+      console.log(breweryName);
+      const beerType = response3.response.beers.items[0].beer.beer_style;
+      console.log(beerType);
+      beerList.push({name: beerName, type: beerType, brewery: breweryName, abv: beerABV, score: 1});
+      console.log(beerList);
+      render();
     })
   }
 
