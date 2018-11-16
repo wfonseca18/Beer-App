@@ -5,6 +5,47 @@ $(document).ready(function () {
   // DYNAMICALLY CREATE BUTTONS that are the beer name plate and match the favorite product products 
   //-button press to increment favorite score in array
 
+
+  // Load the Visualization API and the corechart package.
+  google.charts.load('current', { 'packages': ['corechart'] });
+
+  // Set a callback to run when the Google Visualization API is loaded.
+  google.charts.setOnLoadCallback(drawChart);
+
+  // Callback that creates and populates a data table,
+  // instantiates the pie chart, passes in the data and
+  // draws it.
+  function drawChart() {
+
+    // Create the data table.
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Beer');
+    data.addColumn('number', 'Liked');
+    data.addRows([
+      ['Bud Light ', 5],
+      ['Coors Light', 4],
+      ['Budwieser', 3],
+      ['Miller Light', 2],
+      ['Corona Extra', 1]
+    ]);
+
+    // Set chart options
+    var options = {
+      'title': 'Most Liked Beers',
+      'width': 400,
+      'height': 300
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+
+
+
+
+
+
   const render = function () {
     //clear beerButtons ID=favorites to prevent duplicates and then reload buttons after each new addition to beerList array
     $('#favorites').empty();
@@ -12,7 +53,7 @@ $(document).ready(function () {
     for (let i = 0; i < beerList.length; i++) {
 
       $('#favorites').append(`<button id="button-${i}" class="beer-button beer-name">${beerList[i].name}</button>`)
-      
+
       $(`#button-${i}`).on('click', function () {
         let html = '<div class="card">';
         html += '<div class="card-header">';
@@ -68,8 +109,8 @@ $(document).ready(function () {
   //the two sections below -- add button, and beerInfo need tobe compressed into single process and function -- have duplicate as both built as test samples
   //*********************************************************888  to be built  */
 
-  const beerInfo = function() {
-    
+  const beerInfo = function () {
+
 
     const beerName = $('#beerInput').val().trim(); // grab beer from input field and assign to variable beerName
     console.log(beerName);
@@ -89,31 +130,31 @@ $(document).ready(function () {
 
   $('#submit').on('click', beerInfo);
 
-//   // This function handles events where add a beer button is clicked (submit) -- this portion is only to generate the new button and add it to available list
+  //   // This function handles events where add a beer button is clicked (submit) -- this portion is only to generate the new button and add it to available list
 
-//   // This line will grab the text from the input box and trim off any white space
-//   const beerInput = $('#beerInput').val().trim();
+  //   // This line will grab the text from the input box and trim off any white space
+  //   const beerInput = $('#beerInput').val().trim();
 
-//   // event.preventDefault() prevents the form from trying to submit itself.
-//   // Using a form so that the user can hit enter instead of clicking the button if they want
-//   // event.preventDefault();
+  //   // event.preventDefault() prevents the form from trying to submit itself.
+  //   // Using a form so that the user can hit enter instead of clicking the button if they want
+  //   // event.preventDefault();
 
-//   // The beer from the textbox is then added to our array
-//   beerList.push(beerInput);////// push additional data form API calls to beerList array*************************to be built
+  //   // The beer from the textbox is then added to our array
+  //   beerList.push(beerInput);////// push additional data form API calls to beerList array*************************to be built
 
-//   // Deletes the contents of the input field
-//   $('#beerInput').val('');
+  //   // Deletes the contents of the input field
+  //   $('#beerInput').val('');
 
 
-//   // The beer from the textbox is then added to our array
-//   beerList.push(beerInput);////// push additional data form API calls to beerList array*************************to be built
+  //   // The beer from the textbox is then added to our array
+  //   beerList.push(beerInput);////// push additional data form API calls to beerList array*************************to be built
 
-//   // Deletes the contents of the input field
-//   $('#beerInput').val('');
+  //   // Deletes the contents of the input field
+  //   $('#beerInput').val('');
 
-//   // calling renders which handles the processing of our beerList array and regenerates beer buttons
-//   render();
- });
+  //   // calling renders which handles the processing of our beerList array and regenerates beer buttons
+  //   render();
+});
 
 
 
