@@ -5,34 +5,34 @@ const beerList = [
     type: 'lager',
     brewery: 'Anheuser-Busch',  
     abv: 3.2,
-    score: 1
-  },
-  {
-    name: 'Corona Extra',
-    type: 'lager',
-    brewery: 'Cerveceria Modelo',  
-    abv: 4.6,
-    score: 1
+    score: 5
   },
   {
     name: 'Coors Light',
     type: 'lager',
     brewery: 'Coors Brewing Company',  
     abv: 4.2,
-    score: 1
-  },
-  {
-    name: 'Miller Light',
-    type: 'lager',
-    brewery: 'Miller Brewing Company',  
-    abv: 4.2,
-    score: 1
+    score: 4
   },
   {
     name: 'Budwieser',
     type: 'lager',
     brewery: 'Anheuser-Busch',  
     abv: 4.4,
+    score: 3
+  },
+  {
+    name: 'Miller Light',
+    type: 'lager',
+    brewery: 'Miller Brewing Company',  
+    abv: 4.2,
+    score: 2
+  },
+  {
+    name: 'Corona Extra',
+    type: 'lager',
+    brewery: 'Cerveceria Modelo',  
+    abv: 4.6,
     score: 1
   },
   {
