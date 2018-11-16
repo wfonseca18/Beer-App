@@ -68,51 +68,54 @@ $(document).ready(function () {
   //the two sections below -- add button, and beerInfo need tobe compressed into single process and function -- have duplicate as both built as test samples
   //*********************************************************888  to be built  */
 
-  function myFunction() {
-    // $('#submit').on('click', beerInfo);
+  const beerInfo = function() {
+    
 
     const beerName = $('#beerInput').val().trim(); // grab beer from input field and assign to variable beerName
-    const clientID = '57E8159A820EF24D970F8FF3DA35FA786E6CD22B'
-    const clientSecret = '5DA2FE5752A0B5BF39DC21A323EF78AC587B57BD'
-    //const testURL = `https://api.untappd.com/v4/search/beer?q=${beerName}&sort=name&client_id=${clientID}&client_secret=${clientSecret}`
-    const testURL = `https://api.untappd.com/v4/beer/info?BID=3942&sort=name&client_id=${clientID}&client_secret=${clientSecret}`
+    console.log(beerName);
+    const clientID = '57E8159A820EF24D970F8FF3DA35FA786E6CD22B'  //untapped client ID
+    const clientSecret = '5DA2FE5752A0B5BF39DC21A323EF78AC587B57BD'  //untapped API key
+    const testURL = `https://api.untappd.com/v4/search/beer?q=${beerName}&sort=name&client_id=${clientID}&client_secret=${clientSecret}`
+    //const testURL = `https://api.untappd.com/v4/beer/info?BID=3942&sort=name&client_id=${clientID}&client_secret=${clientSecret}`
     $.ajax({
       url: testURL,
       method: 'GET'
     }).then(function (response3) {
       console.log(response3);
+      const one = response3.response.beers.items[0].beer.beer_abv;
+      console.log(one);
     })
   }
 
-  // This function handles events where add a beer button is clicked (submit) -- this portion is only to generate the new button and add it to available list
+  $('#submit').on('click', beerInfo);
 
-  // This line will grab the text from the input box and trim off any white space
-  const beerInput = $('#beerInput').val().trim();
+//   // This function handles events where add a beer button is clicked (submit) -- this portion is only to generate the new button and add it to available list
 
-  // event.preventDefault() prevents the form from trying to submit itself.
-  // Using a form so that the user can hit enter instead of clicking the button if they want
-  // event.preventDefault();
+//   // This line will grab the text from the input box and trim off any white space
+//   const beerInput = $('#beerInput').val().trim();
 
-  // The beer from the textbox is then added to our array
-  beerList.push(beerInput);////// push additional data form API calls to beerList array*************************to be built
+//   // event.preventDefault() prevents the form from trying to submit itself.
+//   // Using a form so that the user can hit enter instead of clicking the button if they want
+//   // event.preventDefault();
 
-  // Deletes the contents of the input field
-  $('#beerInput').val('');
+//   // The beer from the textbox is then added to our array
+//   beerList.push(beerInput);////// push additional data form API calls to beerList array*************************to be built
 
-
-  // The beer from the textbox is then added to our array
-  beerList.push(beerInput);////// push additional data form API calls to beerList array*************************to be built
-
-  // Deletes the contents of the input field
-  $('#beerInput').val('');
-
-  // calling renders which handles the processing of our beerList array and regenerates beer buttons
-  render();
-});
+//   // Deletes the contents of the input field
+//   $('#beerInput').val('');
 
 
+//   // The beer from the textbox is then added to our array
+//   beerList.push(beerInput);////// push additional data form API calls to beerList array*************************to be built
 
-// $('#addBeer').on('click', beerInfo);
+//   // Deletes the contents of the input field
+//   $('#beerInput').val('');
+
+//   // calling renders which handles the processing of our beerList array and regenerates beer buttons
+//   render();
+ });
+
+
 
 
 
