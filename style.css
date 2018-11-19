@@ -3,3 +3,47 @@
      background-color: blue;
     color: blue;
 } */ 
+
+.background1 {background-color: chocolate !important;}
+/* #beer-display {background-image: url("beermugimage.jpg");} */
+.jumbotron {
+    background-color: aqua; 
+    font-family: 'Spicy Rice', cursive;
+    padding: 0%;
+    overflow: auto;}
+ 
+h1 {font-size: 90px;
+font: bold;
+color: chocolate;}
+
+.beer {height: 100%;}
+.left {float: left;}
+.right {float: right;}
+.middle {width: 33%;}
+img{vertical-align:top}
+
+*{
+    box-sizing: border-box;
+}
+
+.box {
+  float: left;
+  width: 33.33%; /* three boxes (use 25% for four, and 50% for two, etc) */
+  padding: 50px; /* if you want space between the images */
+}
+
+.card-body {background-image: url("stephen-frank-492607-unsplash.jpg");}
+.card-title {color: wheat;
+font: bold;}
+.card-text {color: wheat;
+font: bold;}
+.card-header {
+    font-weight:bold;
+    font-size: 20px;
+    color: chocolate;
+    background-color: aqua;}
+
+    .Title2 {
+        font-weight:bold;
+        font-size: 20px;
+        color: wheat;}
