@@ -4,7 +4,7 @@
     color: blue;
 } */ 
 
-.background1 {background-color: chocolate !important;}
+.background1 {background-color: aqua !important;}
 /* #beer-display {background-image: url("beermugimage.jpg");} */
 .jumbotron {
     background-color: aqua; 
@@ -25,6 +25,8 @@ img{vertical-align:top}
 *{
     box-sizing: border-box;
 }
+ 
+body {background-image: url("ben-ostrower-564571-unsplash.jpg");}
 
 .box {
   float: left;
@@ -46,4 +48,4 @@ font: bold;}
     .Title2 {
         font-weight:bold;
         font-size: 20px;
-        color: wheat;}
+        color: chocolate;}
