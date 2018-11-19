@@ -34,7 +34,8 @@ body {background-image: url("ben-ostrower-564571-unsplash.jpg");}
   padding: 50px; /* if you want space between the images */
 }
 
-.card-body {background-image: url("stephen-frank-492607-unsplash.jpg");}
+.card-body {background-image: url("stephen-frank-492607-unsplash.jpg");
+color: wheat;}
 .card-title {color: wheat;
 font: bold;}
 .card-text {color: wheat;
