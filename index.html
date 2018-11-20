@@ -11,6 +11,9 @@
         crossorigin="anonymous">
     <link rel="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Spicy+Rice" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
     <!--Load the AJAX CHART API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -19,20 +22,21 @@
 
 <body>
     <div class="jumbotron m-3">
-        <h1 class="text-center">Favorite Beers<span class="pl-2"><i class="fas fa-beer"></i></span></h1>
+        <img class="beer left box" src="beerimage.jpg"></img>
+        <span class="middle box"><h1 class="text-center">Favorite Beers</h1></span><img class="beer right box" src="beerimage.jpg"></img>
     </div>
     <div class="row">
-        <div>
+        <div class="background1">
             <!--Div that will hold the pie chart-->
             <div id="chart_div"></div>
         </div>
-        <div class=" col-2 p-3 m-3">
+        <div class=" col-2 p-3 m-3 background1">
             <div class="container">
             </div>
             <div>
                 <form>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Beers</label>
+                        <div class="Title2">Beers</div>
                         <input type="text" class="form-control" id="beerInput" placeholder="Beer">
                     </div>
                     <button type="button" class="btn btn-primary" id="submit">Submit</button>
@@ -45,7 +49,7 @@
                 Beer Info
             </div>
             <div id="beer-display" class="card-body">
-                <h5 class="card-title">Where the beers go</h5>
+                <h2 class="card-title">Where the beers go</h2>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             </div>
         </div>

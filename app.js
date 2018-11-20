@@ -63,7 +63,7 @@ $(document).ready(function () {
     // Create a for-loop to iterate through the letters array.
     for (let i = 0; i < beerList.length; i++) {
 
-      $('#favorites').append(`<button id="button-${i}" class="beer-button beer-name">${beerList[i].name}</button>`)
+      $('#favorites').append(`<button id="button-${i}" type="button" class="beer-button beer-name btn btn-outline-warning">${beerList[i].name}</button>`)
 
       $(`#button-${i}`).on('click', function () {
         let html = '<div class="card">';
