@@ -40,8 +40,8 @@ $(document).ready(function () {
    // Set chart options
    var options = {
      'title': 'Most Liked Beers',
-     'width': 500,
-     'height': 400
+     'width': '100%',
+     'height': 'auto'
    };
 
    // Instantiate and draw our chart, passing in some options.
