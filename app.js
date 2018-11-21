@@ -15,6 +15,12 @@ $(document).ready(function () {
 
   const render = function () {
 
+// insert the favorite beers array sort function to we reorder the array with highest score first - 
+    beerList.sort(function(a, b){
+    return b.score-a.score
+    })
+
+
  // Load the Visualization API and the corechart package.
  google.charts.load('current', { 'packages': ['corechart'] });
 
@@ -48,15 +54,6 @@ $(document).ready(function () {
    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
    chart.draw(data, options);
  }
-
-
-
-
-
-
-
-
-
 
     //clear beerButtons ID=favorites to prevent duplicates and then reload buttons after each new addition to beerList array
     $('#favorites').empty();
