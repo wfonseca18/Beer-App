@@ -120,8 +120,7 @@ $(document).ready(function () {
 
 
 
-  //the two sections below -- add button, and beerInfo need tobe compressed into single process and function -- have duplicate as both built as test samples
-  //*********************************************************888  to be built  */
+  //the two sections below -- add button, and beerInfo compressed into single process and function -- including duplicate check
 
   const beerInfo = function () {
 
@@ -136,6 +135,13 @@ $(document).ready(function () {
       url: testURL,
       method: 'GET'
     }).then(function (response3) {
+    // temp array holding the favorite array list as a single dimension array of only the string names - and all in lower case so we can
+    // compare the new entry in lower case with the array content looking for duplicates - without altering the array and its original 
+    // case on name the indludes comparison JQuery does string comparisons -- returing tru/false, but without the temp array we are  
+    // comparing string to object which is always false
+      const tempBeerArray = beerList.map(function(beer) {
+        return beer.name.toLowerCase();
+      });
       console.log(response3);
       const beerABV = response3.response.beers.items[0].beer.beer_abv;
       console.log(beerABV);
@@ -143,7 +149,11 @@ $(document).ready(function () {
       console.log(breweryName);
       const beerType = response3.response.beers.items[0].beer.beer_style;
       console.log(beerType);
-      beerList.push({name: beerName, type: beerType, brewery: breweryName, abv: beerABV, score: 1});
+      // if the beer is in the array, then do not push new entry. (duplicate check)
+
+      if (!tempBeerArray.includes(beerName.toLowerCase())) {
+        beerList.push({name: beerName, type: beerType, brewery: breweryName, abv: beerABV, score: 1});
+      }     
       console.log(beerList);
       render();
     })
