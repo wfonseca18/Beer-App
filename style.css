@@ -4,15 +4,38 @@
     color: blue;
 } */ 
 
-.background1 {background-color: aqua !important;}
+.background1 {
+    background-color: aqua !important;
+}
+
+
 /* #beer-display {background-image: url("beermugimage.jpg");} */
 .jumbotron {
     background-color: aqua; 
     font-family: 'Spicy Rice', cursive;
     padding: 0%;
-    overflow: auto;}
- 
-h1 {font-size: 90px;
+    overflow: auto;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 9px 13px 26px #000000bd;
+    border: 2px solid #fff;
+}
+.absLeft{
+    left: 0;
+    position: absolute;
+} 
+.absRight{
+    right: 0;
+    position: absolute;
+} 
+
+.posRel{
+    position: relative;
+}
+
+h1 {
+line-height: 197px;
+font-size: 90px;
 font: bold;
 color: chocolate;}
 
@@ -34,19 +57,34 @@ body {background-image: url("ben-ostrower-564571-unsplash.jpg");}
   padding: 50px; /* if you want space between the images */
 }
 
-.card-body {background-image: url("stephen-frank-492607-unsplash.jpg");
-color: wheat;}
-.card-title {color: wheat;
-font: bold;}
-.card-text {color: wheat;
-font: bold;}
+.card-body {
+    background-image: url("stephen-frank-492607-unsplash.jpg");
+    color: wheat;
+}
+.card-title {
+    color: wheat;
+    font: bold;
+}
+.card-text {
+    color: wheat;
+    font: bold;
+}
 .card-header {
     font-weight:bold;
     font-size: 20px;
     color: chocolate;
-    background-color: aqua;}
+    background-color: aqua;
+}
 
-    .Title2 {
-        font-weight:bold;
-        font-size: 20px;
-        color: chocolate;}
+.Title2 {
+    font-weight:bold;
+    font-size: 20px;
+    color: chocolate;
+}
+
+@media only screen and (max width: 320px) {
+    .beerForm{
+        max-width: 150px;
+    }
+
+}

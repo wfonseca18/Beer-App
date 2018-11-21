@@ -21,19 +21,24 @@
 </head>
 
 <body>
-    <div class="jumbotron m-3">
-        <img class="beer left box" src="beerimage.jpg"></img>
-        <span class="middle box"><h1 class="text-center">Favorite Beers</h1></span><img class="beer right box" src="beerimage.jpg"></img>
+    <div class="jumbotron m-3 row">
+        <div class="col-lg-3 posRel">
+            <img class="absLeft" src="beerimage.jpg">
+        </div>
+        <div class="col-lg-6">
+            <h1 class="text-center">Favorite Beers</h1>
+        </div>
+        <div class="col-lg-3 posRel">
+            <img class="absRight" src="beerimage.jpg">
+        </div>
     </div>
-    <div class="row">
-        <div class="background1">
+    <div class="row m-3">
+        <div class="col-4 background1">
             <!--Div that will hold the pie chart-->
             <div id="chart_div"></div>
         </div>
-        <div class=" col-2 p-3 m-3 background1">
-            <div class="container">
-            </div>
-            <div>
+        <div class="col-2 p-3 m-3 background1">
+            <div class="beerForm">
                 <form>
                     <div class="form-group">
                         <div class="Title2">Beers</div>
@@ -42,9 +47,8 @@
                     <button type="button" class="btn btn-primary" id="submit">Submit</button>
                 </form>
             </div>
-
         </div>
-        <div class="card m-3">
+        <div class="card col-2 m-3">
             <div class="card-header">
                 Beer Info
             </div>
