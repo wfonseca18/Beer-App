@@ -41,7 +41,7 @@ $(document).ready(function () {
    var options = {
      'title': 'Most Liked Beers',
      'width': '100%',
-     'height': 'auto'
+     'height': '325'
    };
 
    // Instantiate and draw our chart, passing in some options.
