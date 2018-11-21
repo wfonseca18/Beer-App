@@ -45,7 +45,7 @@ $(document).ready(function () {
 
    // Set chart options
    var options = {
-     'title': 'Most Liked Beers',
+     'title': 'Most Liked Beers - Add your favorite',
      'width': '100%',
      'height': '325'
    };

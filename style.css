@@ -82,7 +82,7 @@ body {background-image: url("ben-ostrower-564571-unsplash.jpg");}
     color: chocolate;
 }
 
-@media only screen and (max width: 320px) {
+@media only screen and (max-width: 320px) {
     .beerForm{
         max-width: 150px;
     }
