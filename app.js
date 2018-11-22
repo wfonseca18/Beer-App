@@ -15,6 +15,12 @@ $(document).ready(function () {
 
   const render = function () {
 
+// insert the favorite beers array sort function to we reorder the array with highest score first - 
+    beerList.sort(function(a, b){
+    return b.score-a.score
+    })
+
+
  // Load the Visualization API and the corechart package.
  google.charts.load('current', { 'packages': ['corechart'] });
 
@@ -39,24 +45,15 @@ $(document).ready(function () {
 
    // Set chart options
    var options = {
-     'title': 'Most Liked Beers',
-     'width': 500,
-     'height': 400
+     'title': 'Most Liked Beers - Add your favorite',
+     'width': '100%',
+     'height': '325'
    };
 
    // Instantiate and draw our chart, passing in some options.
    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
    chart.draw(data, options);
  }
-
-
-
-
-
-
-
-
-
 
     //clear beerButtons ID=favorites to prevent duplicates and then reload buttons after each new addition to beerList array
     $('#favorites').empty();
@@ -120,8 +117,7 @@ $(document).ready(function () {
 
 
 
-  //the two sections below -- add button, and beerInfo need tobe compressed into single process and function -- have duplicate as both built as test samples
-  //*********************************************************888  to be built  */
+  //the two sections below -- add button, and beerInfo compressed into single process and function -- including duplicate check
 
   const beerInfo = function () {
 
@@ -136,6 +132,13 @@ $(document).ready(function () {
       url: testURL,
       method: 'GET'
     }).then(function (response3) {
+    // temp array holding the favorite array list as a single dimension array of only the string names - and all in lower case so we can
+    // compare the new entry in lower case with the array content looking for duplicates - without altering the array and its original 
+    // case on name the indludes comparison JQuery does string comparisons -- returing tru/false, but without the temp array we are  
+    // comparing string to object which is always false
+      const tempBeerArray = beerList.map(function(beer) {
+        return beer.name.toLowerCase();
+      });
       console.log(response3);
       const beerABV = response3.response.beers.items[0].beer.beer_abv;
       console.log(beerABV);
@@ -143,7 +146,11 @@ $(document).ready(function () {
       console.log(breweryName);
       const beerType = response3.response.beers.items[0].beer.beer_style;
       console.log(beerType);
-      beerList.push({name: beerName, type: beerType, brewery: breweryName, abv: beerABV, score: 1});
+      // if the beer is in the array, then do not push new entry. (duplicate check)
+
+      if (!tempBeerArray.includes(beerName.toLowerCase())) {
+        beerList.push({name: beerName, type: beerType, brewery: breweryName, abv: beerABV, score: 1});
+      }     
       console.log(beerList);
       render();
     })
