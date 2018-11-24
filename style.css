@@ -14,7 +14,8 @@
     background-color: aqua; 
     font-family: 'Spicy Rice', cursive;
     padding: 0%;
-    overflow: auto;
+    height: 207px;
+    overflow: hidden;
     position: relative;
     border-radius: 20px;
     box-shadow: 9px 13px 26px #000000bd;
@@ -33,8 +34,24 @@
     position: relative;
 }
 
+#untappedImg {
+    height: 100px
+}
+#imgContainer{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#title {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
 h1 {
-line-height: 197px;
+
 font-size: 90px;
 font: bold;
 color: chocolate;}
@@ -82,9 +99,74 @@ body {background-image: url("ben-ostrower-564571-unsplash.jpg");}
     color: chocolate;
 }
 
+#chart_div{
+    margin-top: 10px;
+}
+
+
+
 @media only screen and (max-width: 320px) {
-    .beerForm{
-        max-width: 150px;
+    .beerform{
+    position: static;}
+    .beerImg{
+        width: 25%;
+        height: auto;}
+        .beer-chart{
+            width: 25%;
+            height: auto;
+        }
+    h1{
+        font-size: 10px;
+    }
+    #title{
+         /* display:flex;
+         justify-content: center;
+         align-items: center; */
+         width:170px;
+         margin: 0 auto;
+    }
+    #chart_div{
+        width: 100vw;
+        position: relative;
+        left: 40%;
+        right: 40%;
+        margin-left: -40vw;
+        margin-right: -40vw;
+        margin-top: 0;
+    }
+    .jumbotron{
+        height:100px;
+    }
     }
 
+
+@media only screen and (max-width: 768px) {
+    .beerform{
+        position: static;}
+        .beerImg{
+            width: 25%;
+            height: auto;}
+            
+        h1{
+            font-size: 35px;
+        }
+        /* #chart_div{
+                width: 325px;} */
+        .push{
+            width:100px;
+        }
+        #background1{
+            width:340px !important;
+            background-color: aqua;
+        }
+        }
+        
+
+
+@media only screen and (max-width: 1170px) {
+h1 {overflow: hidden; margin:auto;
 }
+
+}
+
+
