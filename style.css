@@ -143,9 +143,9 @@ body {background-image: url("ben-ostrower-564571-unsplash.jpg");}
 @media only screen and (max-width: 768px) {
     .beerform{
         position: static;}
-        .beerImg{
-            width: 25%;
-            height: auto;}
+        /* .beerImg{ */
+            /* width: 25%; */
+            /* height: auto;} */
             
         h1{
             font-size: 35px;
