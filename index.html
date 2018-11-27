@@ -22,22 +22,25 @@
 
 <body>
     <div class="jumbotron m-3 row">
-        <div class="col-lg-3 posRel">
-            <img class="absLeft" src="beerimage.jpg">
+        <div class="col-lg-3 col-sm-4 posRel">
+            <img  class="absLeft beerImg" src="beerimage.jpg">
         </div>
-        <div class="col-lg-6">
-            <h1 class="text-center">Favorite Beers</h1>
+        <div class="col-lg-6 col-sm-4">
+            <div id="title">
+                    <h1 class="text-center">Favorite Beers</h1>
+            </div>
+            
         </div>
-        <div class="col-lg-3 posRel">
-            <img class="absRight" src="beerimage.jpg">
-        </div>
+        <!-- <div class="col-lg-3 col-sm-4 posRel"> -->
+            <img class="absRight beerImg" src="beerimage.jpg">
+        <!-- </div> -->
     </div>
     <div class="row m-3">
-        <div class="col-4 background1">
+        <div class="col-md-4 background1">
             <!--Div that will hold the pie chart-->
             <div id="chart_div"></div>
         </div>
-        <div class="col-2 p-3 m-3 background1">
+        <div class="col-md-2 p-3 m-3 background1">
             <div class="beerForm">
                 <form>
                     <div class="form-group">
@@ -48,7 +51,7 @@
                 </form>
             </div>
         </div>
-        <div class="card col-2 m-3">
+        <div class="card col-md-4 m-3">
             <div class="card-header">
                 Beer Info
             </div>
@@ -60,6 +63,12 @@
     </div>
     <div class="row m-3">
     <div id="favorites"></div>
+    </div>
+    <div class="row m-3">
+        <div id="imgContainer">
+                <img id="untappedImg" src="./Untappd-Logo.png" alt="" srcset="">
+        </div>
+        
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
