@@ -66,7 +66,7 @@ img{vertical-align:top}
     box-sizing: border-box;
 }
  
-body {background-image: url("ben-ostrower-564571-unsplash.jpg");}
+body {background-image: url("../images/ben-ostrower-564571-unsplash.jpg");}
 
 .box {
   float: left;
@@ -75,7 +75,7 @@ body {background-image: url("ben-ostrower-564571-unsplash.jpg");}
 }
 
 .card-body {
-    background-image: url("stephen-frank-492607-unsplash.jpg");
+    background-image: url("../images/stephen-frank-492607-unsplash.jpg");
     color: wheat;
 }
 .card-title {
